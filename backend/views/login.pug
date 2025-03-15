@@ -1,0 +1,19 @@
+extend layout
+
+block content
+    .container.d-flex.justify-content-center.align-items-center.min-vh-100
+        .card.shadow.p-4(style = "width: 400px; boeder-radius: 10px;")
+            .text-center.mb-3 
+                img(src = "/Monitrack.png" alt = "Logo" style = "width: 100px;")
+                h2.text-primary MoniTrack 
+            form(action = "/login" method = "POST")
+                .mb-3 
+                    label.form-label(for = "email") Email 
+                    input.form-control(type = "email" id = "email" name = "email" required placeholder = "Enter your Email")
+                .mb-3
+                    label.form-label(for = "password") Password 
+                    input.form-control(type = "password" id = "password" name = "password" required placeholder = "Enter Password")
+
+                button.btn.btn-primary.w-100(type = "Submit") Login 
+            .text-center.mt-3 
+                a(href = "") Don't have an Account? Sign In

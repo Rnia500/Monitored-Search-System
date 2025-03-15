@@ -1,24 +1,25 @@
 const express = require('express');
-const sequelize = require('./database/db'); // Importing sequelize instance
-
 const app = express();
-const port = 3000;
+const path = require('path');
 
-// Example of a simple route
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+// Set Pug as the template engine
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 
-// Sync database (Sequelize)
-sequelize.sync()
-  .then(() => {
-    console.log('Database synchronized');
-  })
-  .catch((error) => {
-    console.error('Failed to sync database:', error);
-  });
+// Serve static files (CSS, images, etc.)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Routes for different pages
+app.get('/', (req, res) => res.render('index'));
+app.get('/about', (req, res) => res.render('about'));
+app.get('/contact', (req, res) => res.render('contact'));
+app.get('/search', (req, res) => res.render('search'));
+app.get('/login', (req, res) => res.render('login'));
+app.get('/register', (req, res) => res.render('register'));
+
+app.use(express.static('public'));
+
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+const PORT = 3000;
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
