@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .container.d-flex.justify-content-center.align-items-center.min-vh-100
+        .card.shadow-lg.p-4.rounded(style="width: 400px; border-radius: 10px;")
+            .text-center.mb-4
+                img(src="/Monitrack.png", alt="MoniTrack Logo", style="width: 80px;")
+                h2.text-primary.fw-bold MoniTrack 
+                p.text-muted Smart Tracking & Monitoring
+                
+            form(action="/login", method="POST")
+                .mb-3 
+                    label.form-label(for="email") Email 
+                    input.form-control(type="email", id="email", name="email", required, placeholder="Enter your Email")
+                .mb-3
+                    label.form-label(for="password") Password 
+                    input.form-control(type="password", id="password", name="password", required, placeholder="Enter Password")
+
+                // Remember Me & Forgot Password
+                .d-flex.justify-content-between.mb-3
+                    .form-check
+                        input.form-check-input(type="checkbox", id="remember", name="remember")
+                        label.form-check-label(for="remember") Remember Me
+                    a.text-decoration-none.text-primary(href="/forgot-password") Forgot Password?
+
+                button.btn.btn-primary.w-100(type="submit") 🔑 Login 
+
+            .text-center.mt-3 
+                p.text-muted Don't have an account?
+                a.btn.btn-outline-success.w-100(href="/register") ✍️ Sign Up

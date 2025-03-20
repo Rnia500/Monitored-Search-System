@@ -1,5 +1,54 @@
 extends layout
 
 block content
-    h1 Welcome to My Home Page
-    p This is the main landing page of my website.
+    .container.text-center.mt-5
+        // Hero Section with Welcome Text
+        h1.text-primary.fw-bold Welcome to My Home Page
+        p.lead.text-muted Explore, Search, and Connect with Ease.
+        
+        // Hero Image
+        .row.mt-4
+            .col-md-8.offset-md-2
+                img(src="/Monitrack.png", alt="Home Banner" style = "width: 120px;")
+
+        // Info Section
+        .row.mt-5
+            .col-md-4
+                .card.shadow-lg.border-0
+                    .card-body
+                        h3.text-success Search Anything
+                        p Easily find what you're looking for with our powerful search engine.
+                        a.btn.btn-primary.btn-lg.mt-2(href="/search") 🔍 Start Searching
+            .col-md-4
+                .card.shadow-lg.border-0
+                    .card-body
+                        h3.text-danger Secure Login
+                        p Access your account securely with multi-factor authentication.
+                        a.btn.btn-success.btn-lg.mt-2(href="/login") 🔑 Login Now
+            .col-md-4
+                .card.shadow-lg.border-0
+                    .card-body
+                        h3.text-warning Join Us
+                        p Become a member today and enjoy exclusive features.
+                        a.btn.btn-warning.btn-lg.mt-2(href="/register") ✍️ Register
+
+        // Features Section
+        .row.mt-5
+            .col-md-6
+                i.bi.bi-speedometer2.display-4.text-primary
+                h4 Fast & Reliable
+                p Enjoy lightning-fast performance and seamless navigation.
+            .col-md-6
+                i.bi.bi-shield-lock.display-4.text-danger
+                h4 Secure & Private
+                p Your data is encrypted and protected with top-tier security.
+
+        // Call to Action
+        .row.mt-5
+            .col.text-center
+                a.btn.btn-outline-dark.btn-lg.px-5.py-3(href="/explore") 🚀 Explore Now
+
+
+block scripts
+    script.
+        console.log("Welcome to My Home Page - Experience a seamless journey!");

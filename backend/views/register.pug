@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+  .container.d-flex.justify-content-center.align-items-center.min-vh-100
+    .card.shadow.p-4(style = "width: 400px; boeder-radius: 10px;")
+      .text-center.mb-3 
+        img(src = "/Monitrack.png" alt = "Logo" style = "width: 100px;")
+        h2.text-primary Register
+        form(action="/register", method="POST")
+          .mb-3
+            label.form-label(for="username") Username:
+            input.form-control(type="text", name="username", id="username", required)
+          .mb-3
+            label.form-label(for="email") Email:
+            input.form-control(type="email", name="email", id="email", required)
+          .mb-3
+            label.form-label(for="password") Password:
+            input.form-control(type="password", name="password", id="password", required)
+          .mb-3
+            label.form-label(for="confirmPassword") Confirm Password:
+            input.form-control(type="password", name="confirmPassword", id="confirmPassword", required)
+          .mb-3
+            button(type="submit") Register
+          .text-center.mt-3
+            a.btn.btn-primary(href="/login") Already have an account? Login

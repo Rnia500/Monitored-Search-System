@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+      
 }
 
 .navbar {
@@ -38,3 +39,7 @@ main {
     text-align: center;
     padding: 20px;
 }
+
+footer {
+    margin-top: auto;
+  }
