@@ -17,6 +17,8 @@ app.get('/', (req, res) => res.render('index'));
 app.get('/about', (req, res) => res.render('about'));
 app.get('/contact', (req, res) => res.render('contact'));
 app.get('/search', (req, res) => res.render('search'));
+app.get('/login', (req, res) => res.render('login'));
+app.get('/register', (req, res) => res.render('register'));
 
 // API route for connecting a device
 app.get('/connect', async (req, res) => {
