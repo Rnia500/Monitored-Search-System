@@ -1,5 +1,27 @@
 extends layout
 
 block content
-    h1 About Us
-    p Learn more about what we do and who we are.
+  .about-container
+    h1 About the Tracking System
+    p.description
+      | Our tracking system is designed to provide real-time location monitoring, ensuring safety,
+      | transparency, and operational efficiency for individuals and organizations.
+
+    .features-section
+      h2 Key Features
+      ul
+        li Real-time GPS tracking
+        li Historical route playback
+        li Alert notifications for unauthorized movement
+        li Secure data storage and access
+        li User-friendly dashboard and mobile access
+
+    .mission-section
+      h2 Our Mission
+      p
+        | We aim to enhance security and optimize logistics by offering a reliable and intelligent tracking solution
+        | powered by modern technology.
+
+    .contact-cta
+      p Want to learn more or request a demo?
+      a.button(href="/contact") Contact Us

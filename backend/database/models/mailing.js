@@ -1,31 +1,26 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database/db');
+const { DataTypes } = require("sequelize");
 
-const Mailing = sequelize.define('Mailing', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
+// models/Mailing.js
+const Notification = sequelize.define('Mailing', {
+    id: { 
+      type: DataTypes.INTEGER, 
+      primaryKey: true, 
+      autoIncrement: true 
+    },
 
-  recipient: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
+    recipientId: { 
+        type: DataTypes.INTEGER, 
+        references: { model: 'users', key: 'id' } 
+      },
 
-  subject: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
+    message: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
 
-  message: {
-    type: DataTypes.TEXT,
-    allowNull: false
-  }
-
-}, {
-  tableName: 'mailings',
-  timestamps: true
-});
-
-module.exports = Mailing;
+  }, {
+    tableName: 'mailing',
+    timestamps: true
+  });
+  
+  module.exports = Mailing;
