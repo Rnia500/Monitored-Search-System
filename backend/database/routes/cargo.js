@@ -5,13 +5,22 @@ const Cargo = require('../models/cargo');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const cargo = await Cargo.findAll();
-  res.json(cargo);
+  try {
+    const cargo = await Cargo.findAll();
+    res.json(cargo);
+  }
+  catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 router.post('/', async (req, res) => {
-  const cargoItem = await Cargo.create(req.body);
-  res.json(cargoItem);
+  try {
+    const cargoItem = await Cargo.create(req.body);
+    res.json(cargoItem);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 module.exports = router;

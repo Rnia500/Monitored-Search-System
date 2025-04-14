@@ -1,33 +1,26 @@
-// models/Report.js
+const { DataTypes } = require('sequelize');
+const sequelize = require('../database/db');
+
 const Report = sequelize.define('Report', {
-    id: {
-       type: DataTypes.INTEGER,
-        primaryKey: true, 
-        autoIncrement: true 
-      },
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
 
-    searchId: { 
-      type: DataTypes.INTEGER,
-       references: { model: 'searches', key: 'id' } 
-      },
-    date: {
-       type: DataTypes.DATE, 
-       allowNull: false
-       },
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
 
-    content: { 
-      type: DataTypes.STRING,
-       allowNull: false
-       },
+  content: {
+    type: DataTypes.TEXT,
+    allowNull: false
+  }
 
-    electronicSignature: { 
-      type: DataTypes.STRING,
-       allowNull: false 
-      }
-      
-  }, {
-    tableName: 'reports',
-    timestamps: true
-  });
-  
-  module.exports = Report;
+}, {
+  tableName: 'reports',
+  timestamps: true
+});
+
+module.exports = Report;

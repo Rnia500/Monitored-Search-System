@@ -5,12 +5,32 @@ const { connectToDevice, readDeviceLocation } = require('./bluetooth.js');
 const { createMap, drawRoute } = require('./mapping.js');
 const { handleError } = require('./errorHandling.js');
 
+const boatRoots = require('./routes/boat'); 
+const cargoRoots = require('./routes/cargo');  
+const historyRoots = require('./routes/history');  
+const mailingRoots = require('./routes/mailing');  
+const notificationRoots = require('./routes/notification');  
+const parametersRoots = require('./routes/parameters');  
+const reportRoots = require('./routes/report');  
+const searchRoots = require('./routes/search');  
+const userRoots = require('./routes/user');  
+
+
 // Set Pug as the template engine
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // Serve static files (CSS, images, etc.)
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/boat', boatRoots);
+app.use('/cargo', cargoRoots);
+app.use('/history', historyRoots);
+app.use('/mailing', mailingRoots);
+app.use('/notification', notificationRoots);
+app.use('/parameters', parametersRoots);
+app.use('/report', reportRoots);
+app.use('/search', searchRoots);
+app.use('/user', userRoots);
 
 // Use the code below to add the session validation to your server application.
 // More info: https://docs.descope.com/build/guides/session

@@ -1,38 +1,26 @@
-// models/Search.js
 const { DataTypes } = require('sequelize');
+const sequelize = require('../database/db');
+
 const Search = sequelize.define('Search', {
-    id: {
-       type: DataTypes.INTEGER, 
-       primaryKey: true, 
-       autoIncrement: true 
-      },
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
 
-    date: {
-       type: DataTypes.DATE,
-        allowNull: false 
-      },
+  query: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
 
-    location: {
-       type: DataTypes.STRING,
-        allowNull: false 
-      },
+  resultsFound: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  }
 
-    duration: {
-       type: DataTypes.FLOAT, 
-       allowNull: false 
-      },
+}, {
+  tableName: 'searches',
+  timestamps: true
+});
 
-    responsibleId: { 
-      type: DataTypes.INTEGER,
-       references: { model: 'users', key: 'id' } 
-      },
-
-    status: { 
-      type: DataTypes.STRING, 
-      allowNull: false }
-  }, {
-    tableName: 'searches',
-    timestamps: true
-  });
-  
-  module.exports = Search;
+module.exports = Search;
