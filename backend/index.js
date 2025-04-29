@@ -1,24 +1,30 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const bodyParser = require('body-parser');
 const { connectToDevice, readDeviceLocation } = require('./bluetooth.js');
 const { createMap, drawRoute } = require('./mapping.js');
 const { handleError } = require('./errorHandling.js');
 
-const boatRoots = require('./routes/boat'); 
-const cargoRoots = require('./routes/cargo');  
-const historyRoots = require('./routes/history');  
-const mailingRoots = require('./routes/mailing');  
-const notificationRoots = require('./routes/notification');  
-const parametersRoots = require('./routes/parameters');  
-const reportRoots = require('./routes/report');  
-const searchRoots = require('./routes/search');  
-const userRoots = require('./routes/user');  
+const boatRoots = require('./database/routes/boat.js');
+const cargoRoots = require('./database/routes/cargo.js');
+const historyRoots = require('./database/routes/history.js'); 
+const mailingRoots = require('./database/routes/mailing.js');
+const notificationRoots = require('./database/routes/notification.js');
+const parametersRoots = require('./database/routes/parameters.js');
+const reportRoots = require('./database/routes/report.js');
+const searchRoots = require('./database/routes/search.js');
+const userRoots = require('./database/routes/user.js');
+
 
 
 // Set Pug as the template engine
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
+
+// Middleware for parsing JSON and URL-encoded data
+
+app.use(bodyParser.json());
 
 // Serve static files (CSS, images, etc.)
 app.use(express.static(path.join(__dirname, 'public')));

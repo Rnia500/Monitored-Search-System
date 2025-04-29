@@ -1,6 +1,7 @@
-
+const { DataTypes } = require("sequelize");
+const sequelize = require('../db');
 // models/Parameters.js
-const Notification = sequelize.define('Parameters', {
+const Parameters = sequelize.define('Parameters', {
     id: { 
       type: DataTypes.INTEGER, 
       primaryKey: true, 

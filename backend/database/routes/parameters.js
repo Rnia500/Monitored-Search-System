@@ -1,6 +1,6 @@
 // routes/parameter.js
 const express = require('express');
-const Parameter = require('../models/parameter');
+const Parameter = require('../models/parameters');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
