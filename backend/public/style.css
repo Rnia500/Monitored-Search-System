@@ -3,147 +3,165 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-      
-}
-
-.navbar a{
+  }
+  
+  /* ========== NAVBAR (if used globally) ========== */
+  .navbar a {
     background-color: #333;
-    padding: 10px ;
-    margin-top: 1000px;
+    padding: 10px;
     margin-left: 10px;
-}
-
-.navbar ul {
+  }
+  
+  .navbar ul {
     list-style: none;
     margin: 0;
     padding: 0;
     text-align: center;
-}
-
-.navbar ul li {
+  }
+  
+  .navbar ul li {
     display: inline;
     margin: 0 15px;
-}
-
-.navbar ul li a {
+  }
+  
+  .navbar ul li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
     padding: 10px;
-}
-
-.navbar ul li a:hover {
+  }
+  
+  .navbar ul li a:hover {
     background-color: #a14f2e;
     border-radius: 9px;
-}
-
-main {
+  }
+  
+  /* ========== DASHBOARD LAYOUT ========== */
+  .dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: #1e90ff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .menu li {
+    margin: 10px 0;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  .menu a:hover {
+    background-color: #104e8b;
+  }
+  
+  .content {
+    flex-grow: 1;
+    background-color: #f4f6f8;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    background-color: white;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .main-content {
+    padding: 20px;
+  }
+  
+  /* ========== OTHER PAGES ========== */
+  main {
     text-align: center;
     padding: 20px;
-}
-
-footer {
+  }
+  
+  footer {
     margin-top: auto;
   }
-
+  
+  /* ========== ABOUT SECTION ========== */
   .about-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     padding: 2rem;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    font-family: "Segoe UI", sans-serif;
+    background-color: #f7f9fc;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
   }
   
   .about-container h1 {
-    font-size: 2.5rem;
     color: #2c3e50;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
   
   .description {
-    font-size: 1.2rem;
-    color: #555;
+    color: #4a4a4a;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
   }
   
-  .team-section, .values-section {
-    margin-bottom: 2rem;
+  .features-section h2,
+  .mission-section h2 {
+    color: #1e90ff;
+    margin-top: 2rem;
   }
   
-  .values-section ul {
-    list-style: disc;
+  ul {
     padding-left: 1.5rem;
     color: #333;
   }
   
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-cta {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+  }
+  
   .button {
     display: inline-block;
+    margin-top: 0.5rem;
     padding: 0.6rem 1.2rem;
-    background-color: #3498db;
+    background-color: #1e90ff;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 6px;
     transition: background 0.3s;
   }
   
   .button:hover {
-    background-color: 
-    .about-container {
-        max-width: 900px;
-        margin: auto;
-        padding: 2rem;
-        background-color: #f7f9fc;
-        border-radius: 12px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-        font-family: 'Segoe UI', sans-serif;
-      }
-      
-      .about-container h1 {
-        color: #2c3e50;
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-      
-      .description {
-        color: #4a4a4a;
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-      }
-      
-      .features-section h2,
-      .mission-section h2 {
-        color: #1e90ff;
-        margin-top: 2rem;
-      }
-      
-      ul {
-        padding-left: 1.5rem;
-        color: #333;
-      }
-      
-      li {
-        margin-bottom: 0.5rem;
-      }
-      
-      .contact-cta {
-        margin-top: 2rem;
-        font-size: 1.1rem;
-      }
-      
-      .button {
-        display: inline-block;
-        margin-top: 0.5rem;
-        padding: 0.6rem 1.2rem;
-        background-color: #1e90ff;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-        transition: background 0.3s;
-      }
-      
-      .button:hover {
-        background-color: #0f74d1;
-      }
-      
+    background-color: #0f74d1;
+  }
+  

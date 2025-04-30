@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .dashboard-container
+    aside.sidebar
+      img.logo(src='/images/monitrack-logo.png', alt='MoniTrack')
+      nav.menu
+        ul
+          li: a(href='/boats') Boats
+          li: a(href='/cargo') Cargo
+          li: a(href='/reports') Reports
+          li: a(href='/notifications') Notifications
+          li: a(href='/search') Search
+          li: a(href='/users') Users
+          li: a(href='/history') History
+          li: a(href='/parameters') Parameters
+
+    main.content
+      header.header
+        h1 MoniTrack Admin Dashboard
+      section.main-content
+        h2 Welcome!
+        p Use the sidebar to navigate between dashboard sections.
