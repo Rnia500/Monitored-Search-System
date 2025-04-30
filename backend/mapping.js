@@ -1,4 +1,5 @@
 // mapping.js
+
 const someDependency = require('./index.js'); // Replace `/* ... */` with actual exported functionality
 
 function createMap() {

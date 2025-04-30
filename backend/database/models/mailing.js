@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
-
+const sequelize = require('../db');
 // models/Mailing.js
-const Notification = sequelize.define('Mailing', {
+const Mailing = sequelize.define('Mailing', {
     id: { 
       type: DataTypes.INTEGER, 
       primaryKey: true, 

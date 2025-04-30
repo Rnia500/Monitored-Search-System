@@ -1,34 +1,38 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database/db'); // Adjust path if needed
+const sequelize = require('../db');
 
 const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncrement: true,
-    allowNull: false
+    autoIncrement: true
   },
+
   username: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true
   },
+
   email: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true
   },
+
   password: {
     type: DataTypes.STRING,
     allowNull: false
   },
+
   role: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: false
   }
+
 }, {
-  tableName: 'users', // Optional: specify a custom table name
-  timestamps: true // Optional: whether to add `createdAt` and `updatedAt`
+  tableName: 'users',
+  timestamps: true
 });
 
 module.exports = User;

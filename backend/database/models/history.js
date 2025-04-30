@@ -1,30 +1,27 @@
-// models/History.js
+const { DataTypes } = require('sequelize');
+const sequelize = require('../db');
+
 const History = sequelize.define('History', {
-    id: {
-       type: DataTypes.INTEGER,
-        primaryKey: true, 
-        autoIncrement: true 
-      },
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
 
-    action: { 
-      type: DataTypes.STRING,
-       allowNull: false 
-      },
+  action: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
 
-    userId: { 
-      type: DataTypes.INTEGER,
-       references: { model: 'users', key: 'id' } 
-      },
+  timestamp: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: DataTypes.NOW
+  }
 
-    date: { 
-      type: DataTypes.DATE, 
-      allowNull: false 
-    }
-    
-  }, {
-    tableName: 'history',
-    timestamps: true
-  });
-  
-  module.exports = History;
-  
+}, {
+  tableName: 'histories',
+  timestamps: true
+});
+
+module.exports = History;

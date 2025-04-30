@@ -5,13 +5,21 @@ const Notification = require('../models/notification');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const notifications = await Notification.findAll();
-  res.json(notifications);
+  try {
+    const notifications = await Notification.findAll();
+    res.json(notifications);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch notifications.' });
+  }
 });
 
 router.post('/', async (req, res) => {
-  const notification = await Notification.create(req.body);
-  res.json(notification);
+  try {
+    const notification = await Notification.create(req.body);
+    res.json(notification);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to create notification.' });
+  }
 });
 
 module.exports = router;

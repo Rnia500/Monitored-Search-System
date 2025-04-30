@@ -1,6 +1,6 @@
 // models/Boat.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database/db');
+const sequelize = require('../db');
 
 const Boat = sequelize.define('Boat', {
   id: { 
