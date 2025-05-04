@@ -1,23 +1,47 @@
 extends layout
 
 block content
-  .dashboard-container
-    aside.sidebar
-      img.logo(src='/images/monitrack-logo.png', alt='MoniTrack')
-      nav.menu
-        ul
-          li: a(href='/boats') Boats
-          li: a(href='/cargo') Cargo
-          li: a(href='/reports') Reports
-          li: a(href='/notifications') Notifications
-          li: a(href='/search') Search
-          li: a(href='/users') Users
-          li: a(href='/history') History
-          li: a(href='/parameters') Parameters
+  .dashboard-dark
+    .sidebar-icons
+      ul
+        li: i.fas.fa-tachometer-alt
+        li: i.fas.fa-user
+        li: i.fas.fa-wrench
+        li: i.fas.fa-question-circle
+        li: i.fas.fa-power-off
 
-    main.content
-      header.header
-        h1 MoniTrack Admin Dashboard
-      section.main-content
-        h2 Welcome!
-        p Use the sidebar to navigate between dashboard sections.
+    .dashboard-widgets
+      .row
+        .widget
+          h3 REVENUE YTD
+          .value $135,000.00
+        .widget
+          h3 VISITOR MAP
+          img(src="/images/worldmap.jpg", alt="Visitor Map")
+
+      .row
+        .widget
+          h3 MARKETING FUNNEL
+          img(src="/images/funnel.jpg", alt="Funnel")
+        .widget
+          h3 KEYWORD RANKING
+          p 2 ↑210% (DASHBOARD)
+          img(src="/images/graph.jpg", alt="Ranking Graph")
+
+        .widget
+          h3 LATEST TWEETS
+          ul.tweet-feed
+            li
+              strong Steve Hall:
+              | RT @pc4media: HubSpot is looking for...
+            li
+              strong Javier Atun:
+              | COS Certified conseguido!
+
+      .row
+        .widget
+          h3 EMAIL CAMPAIGN
+          p Stats & bar chart here
+        .widget
+          h3 NEWSLETTER SUBSCRIBERS
+          p Growth line chart
