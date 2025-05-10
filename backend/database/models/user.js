@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database/db'); // Adjust path if needed
+const sequelize = require('../database/db');
 
 const User = sequelize.define('User', {
   id: {
@@ -23,8 +23,8 @@ const User = sequelize.define('User', {
     allowNull: false
   }
 }, {
-  tableName: 'users', // Optional: specify a custom table name
-  timestamps: true // Optional: whether to add `createdAt` and `updatedAt`
+  tableName: 'users',
+  timestamps: true
 });
 
 module.exports = User;

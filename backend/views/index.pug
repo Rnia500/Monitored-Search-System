@@ -1,6 +1,39 @@
 extends layout
 
 block content
-    h1.text-center Welcome to Monitrack 
-    p.text-center.lead Here are what is to be known about us 
-    a.btn.btn-primary(href = "/search") Start Searching
+    .container.text-center.mt-5
+        // Hero Section with Welcome Text
+        h1.text-primary.fw-bold Welcome to FDS
+        
+        // Hero Image
+        .row.mt-4
+            .col-md-8.offset-md-2
+                img(src="/Monitrack.png", alt="Home Banner" style = "width: 120px;")
+
+        // Info Section
+        .row.mt-5
+            .col-md-4
+                .card.shadow-lg.border-0
+                    .card-body
+                        h3.text-danger Secure Login
+                        p Access your account securely with multi-factor authentication.
+                        a.btn.btn-success.btn-lg.mt-2(href="/login") 🔑 Login Now
+            .col-md-4
+                .card.shadow-lg.border-0
+                    .card-body
+                        h3.text-warning Join Us
+                        p Become a member today and enjoy exclusive features.
+                        a.btn.btn-warning.btn-lg.mt-2(href="/register") ✍️ Register
+
+        // Features Section
+        .row.mt-5
+            .col-md-6
+                i.bi.bi-speedometer2.display-4.text-primary
+                h4 Fast & Reliable
+            .col-md-6
+                i.bi.bi-shield-lock.display-4.text-danger
+                h4 Secure & Private
+
+block scripts
+    script.
+        console.log("Welcome to FDS");
