@@ -1,9 +1,15 @@
 extends layout
 
+
 block content
     .container.text-center.mt-5
         // Hero Section with Welcome Text
+<<<<<<< HEAD
         h1.text-primary.fw-bold Welcome to FDS
+=======
+        h1.text-primary.fw-bold Welcome to My Home Page
+        p.lead.text-muted Explore, Search, and Connect with Ease.
+>>>>>>> 028e870411736ea94d4070ac8fb66a0052674ccb
         
         // Hero Image
         .row.mt-4
@@ -15,21 +21,39 @@ block content
             .col-md-4
                 .card.shadow-lg.border-0
                     .card-body
+<<<<<<< HEAD
+=======
+                        h3.text-success Search Anything
+                        p Easily find what you're looking for with our powerful search engine.
+                        a.btn.btn-primary.btn-lg.mt-2(href="/search") 🔍 Start Searching
+            .col-md-4
+                .card.shadow-lg.border-0
+                    .card-body
+>>>>>>> 028e870411736ea94d4070ac8fb66a0052674ccb
                         h3.text-danger Secure Login
                         p Access your account securely with multi-factor authentication.
                         a.btn.btn-success.btn-lg.mt-2(href="/login") 🔑 Login Now
             .col-md-4
                 .card.shadow-lg.border-0
                     .card-body
+<<<<<<< HEAD
                         h3.text-warning Join Us
                         p Become a member today and enjoy exclusive features.
                         a.btn.btn-warning.btn-lg.mt-2(href="/register") ✍️ Register
+=======
+                        h3.text-warning Connect
+                        p Connect to a device via Bluetooth for localization.
+                        button.btn.btn-warning.btn-lg.mt-2#connect-btn Connect to Device
+            .container
+                    #map(style="height: 300px; width: 100%;")
+>>>>>>> 028e870411736ea94d4070ac8fb66a0052674ccb
 
         // Features Section
         .row.mt-5
             .col-md-6
                 i.bi.bi-speedometer2.display-4.text-primary
                 h4 Fast & Reliable
+<<<<<<< HEAD
             .col-md-6
                 i.bi.bi-shield-lock.display-4.text-danger
                 h4 Secure & Private
@@ -37,3 +61,21 @@ block content
 block scripts
     script.
         console.log("Welcome to FDS");
+=======
+                p Enjoy lightning-fast performance and seamless navigation.
+            .col-md-6
+                i.bi.bi-shield-lock.display-4.text-danger
+                h4 Secure & Private
+                p Your data is encrypted and protected with top-tier security.
+
+        // Call to Action
+        .row.mt-5
+            .col.text-center
+                a.btn.btn-outline-dark.btn-lg.px-5.py-3(href="/explore") 🚀 Explore Now
+block scripts
+    script(src="/script.js")
+block scripts
+    link(rel="stylesheet", href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css")
+    script(src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js")
+    script(src="/script.js")
+>>>>>>> 028e870411736ea94d4070ac8fb66a0052674ccb
